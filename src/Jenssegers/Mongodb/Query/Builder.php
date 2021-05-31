@@ -556,7 +556,7 @@ class Builder extends BaseBuilder
         foreach ($values as $value) {
             // As soon as we find a value that is not an array we assume the user is
             // inserting a single document.
-            if (!is_array($value)) {
+            if (!is_array($value) && !is_object($value)) {
                 $batch = false;
                 break;
             }
